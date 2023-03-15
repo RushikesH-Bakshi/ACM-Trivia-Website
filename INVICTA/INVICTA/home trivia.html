@@ -97,13 +97,6 @@
   </div>
 </nav>
 
-<?php
-  if ($_SERVER['REQUEST_METHOD'] == 'POST')
-  {
-    $email = $_POST['email'];
-  }
-?>
-
 
 <section class="slide kenBurns selected active animate">
   <div class="content">
@@ -116,7 +109,7 @@
           </div>
           
           <p class="ae-3 done"><span class="opacity-8">Start now and get <b>Prize</b> for you</span></p>
-          <form class="slides-form" action="<?=$_SERVER['PHP_SELF']; ?>" autocomplete="on">
+          <form class="slides-form" action="Signin.php" autocomplete="on">
             <input type="email" class="input-9 ae-4 fromCenter done" name="user-email" placeholder="Email" val="" required>
             <input type="submit" class="button blue gradient ae-7 fromCenter done" name="button" value="Hop In">
           </form>
