@@ -109,10 +109,30 @@
           </div>
           
           <p class="ae-3 done"><span class="opacity-8">Start now and get <b>Prize</b> for you</span></p>
-          <form class="slides-form" action="Signin.php" autocomplete="on">
-            <input type="email" class="input-9 ae-4 fromCenter done" name="user-email" placeholder="Email" val="" required>
-            <input type="submit" class="button blue gradient ae-7 fromCenter done" name="button" value="Hop In">
+          <form class="slides-form" autocomplete="on">
+            <input type="email" class="input-9 ae-4 fromCenter done" name="user-email" id="email" placeholder="Email" required>
+            <input type="submit" class="button blue gradient ae-7 fromCenter done" name="button" id="test" value="Hop In" >
           </form>
+
+          <script>
+            document.getElementById('test').addEventListener('click',
+            (e) => {
+              fetch("http://localhost:3000/register", {
+                method: "POST",
+                body: JSON.stringify({
+                  email: document.getElementById("email").value
+                }),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8"
+                }
+              })
+                .then((response) => response.json())
+                .then((data) => console.log(data));
+                e.preventDefault();  
+              }
+              
+            )
+          </script>
           
         </div>
 
