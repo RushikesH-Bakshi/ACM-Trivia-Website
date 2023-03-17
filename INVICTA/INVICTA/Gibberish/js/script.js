@@ -12,7 +12,27 @@ const history = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,2
 
 function randomWord() { 
     if(history.length == 0){
-        alert("Congrats!!! You have finished all the gibberish");
+        //alert("Congrats!!! You have finished all the gibberish");
+        location href = "";
+       
+        document.getElementById('signup').addEventListener('click',
+            (e) => {
+              fetch("http://localhost:3000/gibberish-scores", {
+                method: "POST",
+                body: JSON.stringify({
+                  email: "xyz@gmail.com"
+                  score: document.getElementById("score").value
+                }),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8"
+                }
+              })
+                .then((response) => response.json())
+                .then((data) => console.log(data));
+                e.preventDefault();  
+              }
+    
+    )
     }
     let sel = Math.floor(Math.random() * history.length);
     let ranItem = wordList[history[sel]];
