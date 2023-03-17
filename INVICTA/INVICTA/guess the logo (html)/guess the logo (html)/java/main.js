@@ -34,6 +34,24 @@ function next(){
     if(history.length == 0){
         //alert("all images over");
         location.href = "file:///D:/Invicta/INVICTA/INVICTA/home%20trivia.html";
+        document.getElementById('signup').addEventListener('click',
+            (e) => {
+              fetch("http://localhost:3000/logos-scores", {
+                method: "POST",
+                body: JSON.stringify({
+                  email: "xyz@gmail.com",
+                  score: document.getElementById("score").value
+                }),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8"
+                }
+              })
+                .then((response) => response.json())
+                .then((data) => console.log(data));
+                e.preventDefault();  
+              }
+              
+            )
     }
     const sel = Math.floor(Math.random() * history.length);
     console.log(sel);
