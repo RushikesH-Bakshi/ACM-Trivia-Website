@@ -1,43 +1,44 @@
 const inputs = document.querySelector(".inputs"),
-hintTag = document.querySelector(".hint span"),
-guessLeft = document.querySelector(".guess-left span"),
-wrongLetter = document.querySelector(".wrong-letter span"),
-resetBtn = document.querySelector(".reset-btn"),
-typingInput = document.querySelector(".typing-input");
+    hintTag = document.querySelector(".hint span"),
+    guessLeft = document.querySelector(".guess-left span"),
+    wrongLetter = document.querySelector(".wrong-letter span"),
+    resetBtn = document.querySelector(".reset-btn"),
+    typingInput = document.querySelector(".typing-input");
 //var slider_word = document.querySelector(".slider-word");
 var score = 0;
 
 let word, maxGuesses, incorrectLetters = [], correctLetters = [];
-const history = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38];
+const history = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38];
 // const history = [0,1,2];
 
-function randomWord() { 
-    if(history.length == 0){
-        alert("Congrats!!! You have finished all the gibberish");
+function randomWord() {
+    if (history.length == 0) {
         // location href = "";
-       
-        document.getElementById('gib-next').addEventListener('click',
-            (e) => {
-              fetch("http://localhost:3000/gibberish-scores", {
+        alert("Congrats!!! You have finished all the gibberish");
+        
+        // document.getElementById('gib-next').addEventListener('click',
+        // (e) => {
+            fetch("http://localhost:3000/gibberish-scores", {
                 method: "POST",
                 body: JSON.stringify({
-                  email: sessionStorage.getItem("email"),
-                  score: score
+                    email: sessionStorage.getItem("email"),
+                    score: score
                 }),
                 headers: {
-                  "Content-type": "application/json; charset=UTF-8"
+                    "Content-type": "application/json; charset=UTF-8"
                 }
-              })
-                .then((response) => response.json())
-                .then((data) => console.log(data));
-                e.preventDefault();  
-              }
-    
-    )
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+            e.preventDefault();
+        // }
+            
+        // )
+        
     }
     let sel = Math.floor(Math.random() * history.length);
     let ranItem = wordList[history[sel]];
-    history.splice(sel,1);
+    history.splice(sel, 1);
 
     // let ranItem = wordList[Math.floor(Math.random() * wordList.length)];
 
@@ -58,10 +59,10 @@ randomWord();
 
 function initGame(e) {
     let key = e.target.value.toLowerCase();
-    if(key.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${key}`) && !correctLetters.includes(key)) {
-        if(word.includes(key)) {
+    if (key.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${key}`) && !correctLetters.includes(key)) {
+        if (word.includes(key)) {
             for (let i = 0; i < word.length; i++) {
-                if(word[i] == key) {
+                if (word[i] == key) {
                     correctLetters += key;
                     inputs.querySelectorAll("input")[i].value = key;
                 }
@@ -76,19 +77,19 @@ function initGame(e) {
     typingInput.value = "";
 
     setTimeout(() => {
-        
-        if(correctLetters.length === word.length) {
+
+        if (correctLetters.length === word.length) {
             alert(`Congrats! You guessed the gibberish ${word.toUpperCase()}`);
             score = score + 1;
             document.getElementById("score").innerHTML = score;
             return randomWord();
-        } else if(maxGuesses < 1) {
+        } else if (maxGuesses < 1) {
             alert("Game over! You don't have remaining guesses");
-            for(let i = 0; i < word.length; i++) {
+            for (let i = 0; i < word.length; i++) {
                 inputs.querySelectorAll("input")[i].value = word[i];
             }
         }
-    }, 100);    
+    }, 100);
 }
 
 resetBtn.addEventListener("click", randomWord);
