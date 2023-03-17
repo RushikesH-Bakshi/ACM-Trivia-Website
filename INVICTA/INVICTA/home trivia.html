@@ -111,24 +111,26 @@
           <p class="ae-3 done"><span class="opacity-8">Start now and get <b>Prize</b> for you</span></p>
           <form class="slides-form" autocomplete="on">
             <input type="email" class="input-9 ae-4 fromCenter done" name="user-email" id="email" placeholder="Email" required>
-            <input type="submit" class="button blue gradient ae-7 fromCenter done" name="button" id="test" value="Hop In" >
+            <input type="submit" class="button blue gradient ae-7 fromCenter done" name="button" id="signin" value="Hop In" >
           </form>
 
           <script>
-            document.getElementById('test').addEventListener('click',
+            document.getElementById('signin').addEventListener('click',
             (e) => {
-              fetch("http://localhost:3000/register", {
-                method: "POST",
-                body: JSON.stringify({
-                  email: document.getElementById("email").value
-                }),
-                headers: {
-                  "Content-type": "application/json; charset=UTF-8"
-                }
-              })
-                .then((response) => response.json())
-                .then((data) => console.log(data));
-                e.preventDefault();  
+                fetch("http://localhost:3000/register", {
+                  method: "POST",
+                  body: JSON.stringify({
+                    email: document.getElementById("email").value
+                  }),
+                  headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                  }
+                })
+                  .then((response) => response.json())
+                  .then((data) => console.log(data));
+                e.preventDefault(); 
+                
+                sessionStorage.setItem("email", document.getElementById("email").value)
               }
               
             )
@@ -182,7 +184,7 @@
                     
                   </ul>
                 </div>
-                <a href="#" class="button green gradient wide cropSides cropBottom ae-7">Try it!</a>
+                <a href="./guess the logo (html)/guess the logo (html)/index.html" class="button green gradient wide cropSides cropBottom ae-7">Try it!</a>
               </div>
             </li>
             <li class="col-6-12 col-tablet-1-2 col-phablet-1-1 ae-4">
@@ -200,7 +202,7 @@
                     
                   </ul>
                 </div>
-                <a href="#" class="button blue gradient wide cropSides cropBottom ae-8">Try it!</a>
+                <a href="./Gibberish/index.html" class="button blue gradient wide cropSides cropBottom ae-8">Try it!</a>
               </div>
             </li>
           </ul>
