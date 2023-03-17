@@ -34,5 +34,26 @@ app.post("/register", async (req, res) =>{
   }
 })
 
+app.post("/logos-scores", async (req, res) =>{
+  try {
+    const participant = await Scores.findByPk(req.body.email)
+    await participant.update({ logos_score: req.body.score })
+
+    res.send({ success: true });
+  } catch (e) { 
+    res.status(500).send(e); 
+  }
+})
+
+app.post("/gibberish-scores", async (req, res) =>{
+  try {
+    const participant = await Scores.findByPk(req.body.email)
+    await participant.update({ gibberish_score: req.body.score })
+
+    res.send({ success: true });
+  } catch (e) { 
+    res.status(500).send(e); 
+  }
+})
 
 app.listen(3000)
