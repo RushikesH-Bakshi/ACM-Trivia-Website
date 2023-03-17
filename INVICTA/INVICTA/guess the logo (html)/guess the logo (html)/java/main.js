@@ -10,8 +10,11 @@ var submit_btn = document.querySelector(".submit-btn"),
   var score = 0;
 
 const history = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+// const history = [0,1,2]
 var images = ['a.png', 'b.png', 'c.png', 'd.png', 'e.png','f.png', 'g.png', 'h.png', 'i.png', 'j.png', 'l.png', 'm.png', 'n.png', 'o.png', 'p.png','aa.jpg', 'h.jpg','k.jpg','m.jpg', 'n.jpg', 'o.jpg','r.jpg', 'x.jpg', 'y.jpg', 'z.jpg', 'p.webp','u.webp','chevron.jpg','versace.jpg','unesco.jpg','dropbox.jpg','IEE.jpg'];
+// var images = ['a.png', 'b.png', 'c.png']
 var answer = ["angular","opel","blackberry","vuescript","webpack","redux","purescript","rust","dart","elm","lisp","morris garages","capgemini","wipro","cisco","perl","nbc","atlassian","unilever","toyota","audi","redbull","emporio armani","target","olay",'chevron','versae','unesco','dropbox','IEE'];
+// var answer = ["angular","opel","blackberry"]
 
 window.addEventListener('load', () => {
     next();
@@ -29,14 +32,14 @@ function next(){
 	// i++;
     if(history.length == 0){
         //alert("all images over");
-        location.href = "file:///D:/Invicta/INVICTA/INVICTA/home%20trivia.html";
-        document.getElementById('signup').addEventListener('click',
+        // location.href = "file:///D:/Invicta/INVICTA/INVICTA/home%20trivia.html";
+        document.getElementById('logo-next').addEventListener('click',
             (e) => {
               fetch("http://localhost:3000/logos-scores", {
                 method: "POST",
                 body: JSON.stringify({
                   email: "xyz@gmail.com",
-                  score: document.getElementById("score").value
+                  score: score
                 }),
                 headers: {
                   "Content-type": "application/json; charset=UTF-8"
