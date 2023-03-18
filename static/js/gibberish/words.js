@@ -1,6 +1,3 @@
-// const history=[0,1,2];
-// var word=['morningbreath','fidgetspinners','paparazzi'];
-// var hint=['Moor Nim Bur Wrath','Fish Hits Bin Hers',"Birch Who'll Ray Yell Lid He"];
 let wordList = [
     {
         word: "morningbreath",
@@ -91,67 +88,67 @@ let wordList = [
         hint: "Cab Tame Aim Eric Ah "
     },
     {
-        word:"thanksforthememories",
-        hint:"Tanks Ford Deem Emma Reese "
+        word: "thanksforthememories",
+        hint: "Tanks Ford Deem Emma Reese "
     },
     {
-        word:"wonderwoman",
-        hint:"Wander her womb hen"
+        word: "wonderwoman",
+        hint: "Wander her womb hen"
     },
     {
-        word:"strangerthings",
-        hint:"stir range earth inks"
+        word: "strangerthings",
+        hint: "stir range earth inks"
     },
     {
-        word:"thesea",
-        hint:" thus he"
+        word: "thesea",
+        hint: " thus he"
     },
     {
-        word:"collegeprofessor",
-        hint:"cull hedge proof hiss her"
+        word: "collegeprofessor",
+        hint: "cull hedge proof hiss her"
     },
     {
-        word:"unitedkingdom",
-        hint:"EWE NIGHTTED KING DUMB"
+        word: "unitedkingdom",
+        hint: "EWE NIGHTTED KING DUMB"
     },
     {
-        word:"mariokart",
-        hint:"marry oak heart"
+        word: "mariokart",
+        hint: "marry oak heart"
     },
     {
-        word:"netflixandchill",
-        hint:"Knit Flick Sand Shill "
+        word: "netflixandchill",
+        hint: "Knit Flick Sand Shill "
     },
     {
-        word:"academyawards",
-        hint:"Ache Hatter Mid Words "
+        word: "academyawards",
+        hint: "Ache Hatter Mid Words "
     },
     {
-        word:"buyonegetonefree",
-        hint:"Pie Juan Kit Won Furry "
+        word: "buyonegetonefree",
+        hint: "Pie Juan Kit Won Furry "
     },
     {
-        word:"seeyoulater",
-        hint:"Sea Yule Hater "
+        word: "seeyoulater",
+        hint: "Sea Yule Hater "
     },
     {
-        word:"standupcomedy",
-        hint:"Stint Hop Calm Mode He "
+        word: "standupcomedy",
+        hint: "Stint Hop Calm Mode He "
     },
     {
-        word:"thestruggleisreal",
-        hint:"Thirst Rug El Isreal "
+        word: "thestruggleisreal",
+        hint: "Thirst Rug El Isreal "
     },
     {
-        word:"passwithflyingcolors",
-        hint:"Pats Width Fly Eyeing Coolers "
+        word: "passwithflyingcolors",
+        hint: "Pats Width Fly Eyeing Coolers "
     },
     {
-        word:"myclientisinnocent",
-        hint:"Mike Lion Tis Inner Scent "
+        word: "myclientisinnocent",
+        hint: "Mike Lion Tis Inner Scent "
     },
     {
-        word:"dontwastemytime",
-        hint:"Dawn Ways To Might I'm "
+        word: "dontwastemytime",
+        hint: "Dawn Ways To Might I'm "
     }
 ]

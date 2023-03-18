@@ -11,45 +11,36 @@ var score = 0;
 
 const history = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 var images = ['a.png', 'b.png', 'c.png', 'd.png', 'e.png', 'f.png', 'g.png', 'h.png', 'i.png', 'j.png', 'l.png', 'm.png', 'n.png', 'o.png', 'p.png', 'aa.jpg', 'h.jpg', 'k.jpg', 'm.jpg', 'n.jpg', 'o.jpg', 'r.jpg', 'x.jpg', 'y.jpg', 'z.jpg', 'p.webp', 'u.webp', 'chevron.jpg', 'versace.jpg', 'unesco.jpg', 'dropbox.jpg', 'IEE.jpg'];
-var answer = ["angular", "opel", "blackberry", "vuescript", "webpack", "redux", "purescript", "rust", "dart", "elm", "lisp", "morris garages", "capgemini", "wipro", "cisco", "perl", "nbc", "atlassian", "unilever", "toyota", "audi", "redbull", "emporio armani", "target", "olay", "chevron", "versace", "unesco", "dropbox", "IEE"];
+var answer = ["angular","opel","blackberry","vuescript","webpack","redux","purescript","rust","dart","elm","lisp","morris garages","capgemini","wipro","cisco","perl","nbc","atlassian","unilever","toyota","audi","redbull","emporio armani","target","olay","dior","accenture","chevron","versace","unesco","dropbox","IEE"];
 
 
 window.addEventListener('load', () => {
   next();
 });
 
-
 var i = 0;
-
-
-
 
 function next() {
 
   // if(i >= images.length-1) i = -1;
   // i++;
   if (history.length == 0) {
-    alert("You have completed all the logos")
+    alert("You have compvared all the logos")
 
-    // document.getElementById('logo-next').addEventListener('click',
-    //   (e) => {
-      location.href = "http://localhost:3000/";
-      fetch("http://localhost:3000/logos-scores", {
-        method: "POST",
-        body: JSON.stringify({
-          email: sessionStorage.getItem("email"),
-          score: score
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      })
+    location.href = "/";
+    fetch("/logos-scores", {
+      method: "POST",
+      body: JSON.stringify({
+        email: sessionStorage.getItem("email"),
+        score: score
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
       .then((response) => response.json())
       .then((data) => console.log(data));
-      e.preventDefault();
-    //   }
-
-    // )
+    e.preventDefault();
   }
   const sel = Math.floor(Math.random() * history.length);
   console.log(sel);
@@ -61,21 +52,17 @@ function next() {
 
 function setImg() {
   return slider_img.setAttribute('src', "images/guessTheLogo/" + images[i]);
-
 }
 
 
 submit_btn.addEventListener("click", () => {
-
   var set_answer = answer_input.value;
   var final_answer = set_answer.toLowerCase();
   if (answer[i] == final_answer) {
-    //alert("Correct");
     score = score + 1;
     document.getElementById("score").innerHTML = score;
     answer_input.value = "";
     next();
-
   }
 
   else {
@@ -88,7 +75,7 @@ submit_btn.addEventListener("click", () => {
 
 
 function getQuestion() {
-  for (let i = images.length - 1; i > 0; i--) {
+  for (var i = images.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [images[i], images[j]] = [images[j], images[i]];
     [answer[i], answer[j]] = [answer[j], answer[i]];

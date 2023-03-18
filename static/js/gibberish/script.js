@@ -15,26 +15,27 @@ function randomWord() {
     if (history.length == 0) {
         // location href = "";
         alert("Congrats!!! You have finished all the gibberish");
-        
+
         // document.getElementById('gib-next').addEventListener('click',
         // (e) => {
-            fetch("http://localhost:3000/gibberish-scores", {
-                method: "POST",
-                body: JSON.stringify({
-                    email: sessionStorage.getItem("email"),
-                    score: score
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
-            })
+        location.href = "/";
+        fetch("http://localhost:3000/gibberish-scores", {
+            method: "POST",
+            body: JSON.stringify({
+                email: sessionStorage.getItem("email"),
+                score: score
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
             .then((response) => response.json())
             .then((data) => console.log(data));
-            e.preventDefault();
+        e.preventDefault();
         // }
-            
+
         // )
-        
+
     }
     let sel = Math.floor(Math.random() * history.length);
     let ranItem = wordList[history[sel]];

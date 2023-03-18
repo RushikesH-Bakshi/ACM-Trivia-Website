@@ -107,6 +107,6 @@ var qustion_data_base = [
         title: "wipro",
         hint_qustion: "I am the largest vendor of computer software in the world"
     }
-    
-   
+
+
 ]
