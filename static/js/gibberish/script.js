@@ -34,7 +34,7 @@ var x = setInterval(function() {
 
 function randomWord() {
     if (history.length == 0 || distance < 0) {
-        alert("Congrats!!! You have finished all the gibberish");
+        alert("Game Over!");
 
         // document.getElementById('gib-next').addEventListener('click',
         // (e) => {
