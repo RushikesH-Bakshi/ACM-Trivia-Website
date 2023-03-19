@@ -58,97 +58,98 @@ let wordList = [
     {
         word: "lactoseintolerant",
         hint: "Lack dosent holler rent"
-    },
-    {
-        word: "seeyoulater",
-        hint: "Sea Yule Hater"
-    },
-    {
-        word: "mirrorselfie",
-        hint: "Mere ores elf free"
-    },
-    {
-        word: "quarantine",
-        hint: "Core war aunty in"
-    },
-    {
-        word: "abananapeal",
-        hint: "Abe an an apeal"
-    },
-    {
-        word: "headshoulderkneesandtoes",
-        hint: "Had showed her niece sin those-"
-    },
-    {
-        word: "potatochips",
-        hint: "Boe Day Tote Ships "
-    },
-    {
-        word: "captainamerica",
-        hint: "Cab Tame Aim Eric Ah "
-    },
-    {
-        word: "thanksforthememories",
-        hint: "Tanks Ford Deem Emma Reese "
-    },
-    {
-        word: "wonderwoman",
-        hint: "Wander her womb hen"
-    },
-    {
-        word: "strangerthings",
-        hint: "stir range earth inks"
-    },
-    {
-        word: "thesea",
-        hint: " thus he"
-    },
-    {
-        word: "collegeprofessor",
-        hint: "cull hedge proof hiss her"
-    },
-    {
-        word: "unitedkingdom",
-        hint: "EWE NIGHTTED KING DUMB"
-    },
-    {
-        word: "mariokart",
-        hint: "marry oak heart"
-    },
-    {
-        word: "netflixandchill",
-        hint: "Knit Flick Sand Shill "
-    },
-    {
-        word: "academyawards",
-        hint: "Ache Hatter Mid Words "
-    },
-    {
-        word: "buyonegetonefree",
-        hint: "Pie Juan Kit Won Furry "
-    },
-    {
-        word: "seeyoulater",
-        hint: "Sea Yule Hater "
-    },
-    {
-        word: "standupcomedy",
-        hint: "Stint Hop Calm Mode He "
-    },
-    {
-        word: "thestruggleisreal",
-        hint: "Thirst Rug El Isreal "
-    },
-    {
-        word: "passwithflyingcolors",
-        hint: "Pats Width Fly Eyeing Coolers "
-    },
-    {
-        word: "myclientisinnocent",
-        hint: "Mike Lion Tis Inner Scent "
-    },
-    {
-        word: "dontwastemytime",
-        hint: "Dawn Ways To Might I'm "
     }
+    // },
+    // {
+    //     word: "seeyoulater",
+    //     hint: "Sea Yule Hater"
+    // },
+    // {
+    //     word: "mirrorselfie",
+    //     hint: "Mere ores elf free"
+    // },
+    // {
+    //     word: "quarantine",
+    //     hint: "Core war aunty in"
+    // },
+    // {
+    //     word: "abananapeal",
+    //     hint: "Abe an an apeal"
+    // },
+    // {
+    //     word: "headshoulderkneesandtoes",
+    //     hint: "Had showed her niece sin those-"
+    // },
+    // {
+    //     word: "potatochips",
+    //     hint: "Boe Day Tote Ships "
+    // },
+    // {
+    //     word: "captainamerica",
+    //     hint: "Cab Tame Aim Eric Ah "
+    // },
+    // {
+    //     word: "thanksforthememories",
+    //     hint: "Tanks Ford Deem Emma Reese "
+    // },
+    // {
+    //     word: "wonderwoman",
+    //     hint: "Wander her womb hen"
+    // },
+    // {
+    //     word: "strangerthings",
+    //     hint: "stir range earth inks"
+    // },
+    // {
+    //     word: "thesea",
+    //     hint: " thus he"
+    // },
+    // {
+    //     word: "collegeprofessor",
+    //     hint: "cull hedge proof hiss her"
+    // },
+    // {
+    //     word: "unitedkingdom",
+    //     hint: "EWE NIGHTTED KING DUMB"
+    // },
+    // {
+    //     word: "mariokart",
+    //     hint: "marry oak heart"
+    // },
+    // {
+    //     word: "netflixandchill",
+    //     hint: "Knit Flick Sand Shill "
+    // },
+    // {
+    //     word: "academyawards",
+    //     hint: "Ache Hatter Mid Words "
+    // },
+    // {
+    //     word: "buyonegetonefree",
+    //     hint: "Pie Juan Kit Won Furry "
+    // },
+    // {
+    //     word: "seeyoulater",
+    //     hint: "Sea Yule Hater "
+    // },
+    // {
+    //     word: "standupcomedy",
+    //     hint: "Stint Hop Calm Mode He "
+    // },
+    // {
+    //     word: "thestruggleisreal",
+    //     hint: "Thirst Rug El Isreal "
+    // },
+    // {
+    //     word: "passwithflyingcolors",
+    //     hint: "Pats Width Fly Eyeing Coolers "
+    // },
+    // {
+    //     word: "myclientisinnocent",
+    //     hint: "Mike Lion Tis Inner Scent "
+    // },
+    // {
+    //     word: "dontwastemytime",
+    //     hint: "Dawn Ways To Might I'm "
+    // }
 ]
