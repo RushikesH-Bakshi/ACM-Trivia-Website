@@ -53,7 +53,7 @@ function randomWord() {
             .then((data) => {
                 console.log(data);
                 location.href = "/"
-                alert("Your score has been submitted successfully");
+                alert(data.msg);
             });
         // }
 

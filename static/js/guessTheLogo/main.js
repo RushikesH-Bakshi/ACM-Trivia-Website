@@ -64,7 +64,7 @@ function next() {
       .then((data) => {
         console.log(data);
         location.href = "/";
-        alert("Your scores have been successfully submitted");
+        alert(data.msg);
       });
   }
   const sel = Math.floor(Math.random() * history.length);

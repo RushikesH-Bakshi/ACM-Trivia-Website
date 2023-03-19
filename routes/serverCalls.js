@@ -6,19 +6,16 @@ const router = express.Router();
 
 router.post("/register", async (req, res) =>{
     try {
-      const participant = await Scores.create({ email: req.body.email})
-      
+      const [participant, created] = await Scores.findOrCreate({ where: { email: req.body.email }});
+      let msg = created ?
+      "You have been signed in as " + participant.email + "\nPlease scroll down to start with the trivia" :
+      "You were already signed in as " + participant.email + "\nPlease scroll down to start with the trivia";
+
       res.send({ 
-        success: true,
-        message: "You have been signed in, please scroll down to start with the trivia"
+        message: msg
       });
     } catch (e) { 
-      if (e instanceof ValidationError) {
-        res.status(500).send({
-          success: true,
-          message: "You were already signed in, please scroll down to start with the trivia"
-        })
-      }
+      res.status(500).send(e)
     }
 })
 
@@ -28,7 +25,7 @@ router.post("/logos-scores", async (req, res) =>{
         where: { email: req.body.email }
       });
       
-      res.send({ success: true });
+      res.send({ msg: "Your final score: " + req.body.score });
     } catch (e) { 
         res.status(500).send(e); 
     }
@@ -40,7 +37,7 @@ router.post("/logos-scores", async (req, res) =>{
         where: { email: req.body.email }
       });
   
-      res.send({ success: true });
+      res.send({ msg: "Your final score: " + req.body.score });
     } catch (e) { 
       res.status(500).send(e); 
     }
