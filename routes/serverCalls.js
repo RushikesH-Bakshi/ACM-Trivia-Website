@@ -1,15 +1,24 @@
 const { sequelize, Scores } = require('../models')
+const { ValidationError } = require('sequelize')
 const express = require("express");
 const router = express.Router();
 
 
 router.post("/register", async (req, res) =>{
     try {
-        const participant = await Scores.create({ email: req.body.email})
-        
-        res.send({ success: true });
+      const participant = await Scores.create({ email: req.body.email})
+      
+      res.send({ 
+        success: true,
+        message: "You have been signed in, please scroll down to start with the trivia"
+      });
     } catch (e) { 
-      res.status(500).send(e); 
+      if (e instanceof ValidationError) {
+        res.status(500).send({
+          success: true,
+          message: "You were already signed in, please scroll down to start with the trivia"
+        })
+      }
     }
 })
 

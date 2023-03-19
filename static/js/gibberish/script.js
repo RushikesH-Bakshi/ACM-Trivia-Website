@@ -18,8 +18,8 @@ function randomWord() {
 
         // document.getElementById('gib-next').addEventListener('click',
         // (e) => {
-        location.href = "/";
-        fetch("http://localhost:3000/gibberish-scores", {
+        
+        fetch("/gibberish-scores", {
             method: "POST",
             body: JSON.stringify({
                 email: sessionStorage.getItem("email"),
@@ -30,7 +30,10 @@ function randomWord() {
             }
         })
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                console.log(data);
+                location.href = "/";
+            });
         e.preventDefault();
         // }
 

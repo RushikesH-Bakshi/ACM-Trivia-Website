@@ -141,7 +141,13 @@
   <nav class="panel top">
     <div class="sections desktop hidden">
       <!--<div class="left">
-      <img src="D:\Invicta\INVICTA\INVICTA\assets\logoo\invicta.png" title="INVICTA"><svg style="width:100px;height:16px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="file:///D:/Invicta/web%20sample/web%20sample/index.html#logo"></use></svg></a></div>-->
+      <img src="../static/assetsForHome/logoo/invicta.png" title="INVICTA">
+      <svg style="width:100px;height:16px;">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="file:///D:/Invicta/web%20sample/web%20sample/index.html#logo">
+
+        </use></svg>
+      </a>
+    </div>-->
       <div class="center">
         <ul class="menu uppercase">
           <li><a href="#">Home</a></li>
@@ -213,7 +219,7 @@
               </svg>
             </div>
 
-            <p class="ae-3 done"><span class="opacity-8">Start now and get <b>Prize</b> for you</span></p>
+            <p class="ae-3 done"><span class="opacity-8">Welcome to <b>INVICTA 2K23</b>'s Trivia Quiz</span></p>
             <form class="slides-form" autocomplete="on">
               <input type="email" class="input-9 ae-4 fromCenter done" name="user-email" id="email" placeholder="Email"
                 required>
@@ -224,6 +230,7 @@
             <script>
               document.getElementById('signin').addEventListener('click',
                 (e) => {
+                  window.scrollBy(100,0)
                   fetch("/register", {
                     method: "POST",
                     body: JSON.stringify({
@@ -234,7 +241,7 @@
                     }
                   })
                     .then((response) => response.json())
-                    .then((data) => console.log(data));
+                    .then((data) => alert(data.message));
                   e.preventDefault();
 
                   sessionStorage.setItem("email", document.getElementById("email").value)

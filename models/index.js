@@ -7,14 +7,14 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || "development";
 const db = {};
 
-// const sequelize = new Sequelize('invicta_trivia', 'admin', 'AReallyStrongPassword#4#4', {
-//   host: 'invicta-trivia-db.cjltllr6gufx.ap-south-1.rds.amazonaws.com',
-//   dialect: 'mysql'
-// })
-const sequelize = new Sequelize('invicta_trivia', 'root', 'hg64PM@gs9m5xI3RMBU', {
-  host: 'localhost',
+const sequelize = new Sequelize('invicta_trivia', 'admin', 'AReallyStrongPassword#4#4', {
+  host: 'invicta-trivia-db.cjltllr6gufx.ap-south-1.rds.amazonaws.com',
   dialect: 'mysql'
 })
+// const sequelize = new Sequelize('invicta_trivia', 'root', 'hg64PM@gs9m5xI3RMBU', {
+//   host: 'localhost',
+//   dialect: 'mysql'
+// })
 
 fs.readdirSync(__dirname)
   .filter((file) => {
